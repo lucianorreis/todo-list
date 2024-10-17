@@ -19,7 +19,7 @@ export const Tasks: React.FC = () => {
 
   //? Função dispara quando o usuário está querendo adicionar uma nova tarefa
 function handleSubmitAddTask(e: FormEvent) {
-    e.preventDefault()
+    e.preventDefault() //Impede a Página de carregar
     
     if (taskTitle.length <= 3 ) {
         alert('Não é possível adicionar uma tarefa com menos de 3 letras')
@@ -28,7 +28,7 @@ function handleSubmitAddTask(e: FormEvent) {
 
     //Adiciona a tarefa
     setTasks([
-        ...tasks, // * Pega todas as tarefas que já existiam ee coloca nesse novo estado de tarefas
+        ...tasks, // * Pega todas as tarefas que já existiam e coloca nesse novo estado de tarefas
         {
             id: new Date().getTime(),
             title: taskTitle,
